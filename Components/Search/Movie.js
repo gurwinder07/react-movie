@@ -14,6 +14,7 @@ class Movie extends Component {
 
     onContentSizeChange = (contentWidth, contentHeight) => {
         this.setState({ screenHeight: contentHeight });
+
     }
 
     fetchMovieData = async() => {
@@ -36,7 +37,7 @@ class Movie extends Component {
             <ScrollView
                 scrollEnabled={scrollEnabled}
                 onContentSizeChange={this.onContentSizeChange}
-                style={{padding: 10, maxWidth: '100%', marginBottom: 210}}
+            style={{padding: 10, maxWidth: '100%', backgroundColor:'#19263a'}}
             >
                 <View >
                     <Form
@@ -46,19 +47,17 @@ class Movie extends Component {
                     {this.state.results.slice(0, 10).map((result, i) => {
                         return (
                           <View key={i}>
-                          <Card style={{flex: 0}}>
+                          <Card style={{flex: 0,paddingLeft:0}}>
 
-                            <CardItem>
+                            <CardItem style={{ padding:20, maxWidth: '100%', backgroundColor:'#4b5360',paddingLeft:0}}>
                               <Body>
                                 <Image source={{uri: `https://image.tmdb.org/t/p/w500/${result.poster_path}`}} style={{height: 300, width: 300, flex: 1}}/>
-                                <Text>
+                                <Text style={{fontSize: 17,color:'#fff'}} ellipsizeMode='tail' numberOfLines={3}>
                                 {result.overview}
                                 </Text>
                               </Body>
                             </CardItem>
-                            <CardItem>
 
-                            </CardItem>
                           </Card>
 
                                         </View>

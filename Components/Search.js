@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Header, Left, Body, Right, Button,Subtitle, Icon, Title, Segment, Content } from 'native-base';
-import {Image,View,Text, StyleSheet} from 'react-native'
-
+import { Container, Header, Left, Text, Body, Right, Button,Subtitle, Icon, Title, Segment, Content } from 'native-base';
+import {Image,View, StyleSheet} from 'react-native'
 import Movie from './Search/Movie'
 import People from './Search/People'
 import Tvshow from './Search/Tvshow'
@@ -15,7 +14,9 @@ SelectedList:'1'
 
   renderSelectedList()
   {
+
 switch(this.state.SelectedList){
+
   case '1':
   return (<Movie />);
   break;
@@ -36,9 +37,11 @@ switch(this.state.SelectedList){
   render() {
     return (
 
-      <Container>
+      <Container style={{fontSize: 17,paddingLeft:0,paddingTop:10 ,color:'#19263a'}}>
 
-        <Segment>
+
+
+        <Segment >
           <Button   active={this.state.SelectedList==='1'} onPress={() => this.setState({SelectedList:'1'})}>
             <Text>Movie</Text>
           </Button>
@@ -50,7 +53,7 @@ switch(this.state.SelectedList){
           </Button>
         </Segment>
 
-        <Content >
+        <Content style={{fontSize: 17,paddingLeft:0,paddingTop:10 ,color:'#19263a'}}>
 
                 {this.renderSelectedList()}
 
@@ -62,17 +65,9 @@ switch(this.state.SelectedList){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#19263a',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  ImageStyle: {
-    width: 250,
-    height:280,
-  },
-  CardStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 250,
-  },
+
 });

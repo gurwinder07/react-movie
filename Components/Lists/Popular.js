@@ -33,6 +33,7 @@ export default class Popular extends Component {
             <ScrollView
                 scrollEnabled={scrollEnabled}
                 onContentSizeChange={this.onContentSizeChange}
+                style={{padding: 10, maxWidth: '100%', backgroundColor:'#19263a'}}
             >
                 <View >
                     {this.state.results.slice(0, 10).map((result, i) => {
@@ -40,10 +41,10 @@ export default class Popular extends Component {
 <View key={i}>
 <Card style={{flex: 0}}>
 
-  <CardItem>
+  <CardItem style={{padding:20, maxWidth: '100%', backgroundColor:'#4b5360'}}>
     <Body>
       <Image source={{uri: `https://image.tmdb.org/t/p/w500/${result.poster_path}`}} style={{height: 300, width: 300, flex: 1}}/>
-      <Text>
+      <Text style={{fontSize: 17,paddingLeft:5,paddingTop:10 ,color:'#fff'}} ellipsizeMode='tail' numberOfLines={3}>
       {result.overview}
       </Text>
     </Body>

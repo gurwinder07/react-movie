@@ -9,7 +9,7 @@ export default class Lists extends Component {
 
   state =
   {
-SelectedListTab:'1'
+SelectedList:'1'
   }
 
   renderSelectedList()
@@ -36,6 +36,9 @@ switch(this.state.SelectedList){
     return (
 
       <Container>
+
+
+
         <Segment>
           <Button   active={this.state.SelectedList==='1'} onPress={() => this.setState({SelectedList:'1'})}>
             <Text>Upcoming</Text>

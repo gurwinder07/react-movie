@@ -37,7 +37,7 @@ class Movie extends Component {
             <ScrollView
                 scrollEnabled={scrollEnabled}
                 onContentSizeChange={this.onContentSizeChange}
-                style={{padding: 10, maxWidth: '100%', marginBottom: 210}}
+                style={{ maxWidth: '100%', backgroundColor:'#4b5360',padding:10}}
             >
                 <View >
                     <Form
@@ -49,17 +49,15 @@ class Movie extends Component {
                           <View key={i}>
                           <Card style={{flex: 0}}>
 
-                            <CardItem>
+                            <CardItem style={{ padding:20, maxWidth: '100%', backgroundColor:'#4b5360',padding:10}}>
                               <Body>
-                                <Image source={{uri: `https://image.tmdb.org/t/p/original/${result.poster_path}`}} style={{height: 300, width: 300, flex: 1}}/>
-                                <Text>
+                                <Image source={{uri: `https://image.tmdb.org/t/p/original/${result.poster_path}`}} style={{height: 300, width: 300, flex: 1,paddingLeft:10}}/>
+                                <Text style={{fontSize: 17,color:'#fff'}} ellipsizeMode='tail' numberOfLines={3}>
                                 {result.overview}
                                 </Text>
                               </Body>
                             </CardItem>
-                            <CardItem>
 
-                            </CardItem>
                           </Card>
 
                                         </View>
